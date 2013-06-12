@@ -124,7 +124,8 @@ $mail_attribute = "mail";
 $mail_from = "webmaster@citizenschools.org";
 # Notify users anytime their password is changed
 $notify_on_change = true;
-
+# Pass full user name in email
+$fullName_Attribute = "sn";
 # Display help messages
 $show_help = true;
 

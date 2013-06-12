@@ -32,6 +32,7 @@ $newpassword = "";
 $oldpassword = "";
 $ldap = "";
 $userdn = "";
+$userFullName = "";
 if (!isset($pwd_forbidden_chars)) { $pwd_forbidden_chars=""; }
 $mail = "";
 
@@ -91,7 +92,7 @@ if ( $result === "" ) {
         $result = "ldaperror";
         error_log("LDAP - Bind error $errno  (".ldap_error($ldap).")");
     } else {
-    
+
     # Search for user
     $ldap_filter = str_replace("{login}", $login, $ldap_filter);
     $search = ldap_search($ldap, $ldap_base, $ldap_filter);
@@ -110,13 +111,14 @@ if ( $result === "" ) {
         $result = "badcredentials";
         error_log("LDAP - User $login not found");
     } else {
-    
+
     # Get user email for notification
     if ( $notify_on_change ) {
         $mailValues = ldap_get_values($ldap, $entry, $mail_attribute);
         if ( $mailValues["count"] > 0 ) {
             $mail = $mailValues[0];
         }
+		$userFullName = ldap_get_values($ldap, $entry, $fullName_Attribute);
     }
 
     # Bind with old password
@@ -159,7 +161,7 @@ if ( $result === "" ) {
 <div class="result <?php echo get_criticity($result) ?>">
 <h2 class="<?php echo get_criticity($result) ?>"><?php echo $messages[$result]; ?></h2>
 </div>
-
+<?php echo $userFullName;?>
 <?php if ( $result !== "passwordchanged" ) { ?>
 
 <?php
