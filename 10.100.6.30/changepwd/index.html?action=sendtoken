@@ -1,0 +1,48 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Self service password reset</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="stylesheet" type="text/css" href="style/styles.css" />
+    <link href="style/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="style/favicon.ico" rel="shortcut icon" />
+</head>
+<body>
+
+<div id="content" class="backbox" style="width:600px; padding:10px;background-color:smoke;">
+<div style="align:center" class = "help">
+<!--<h1>Self service password reset</h1>-->
+<p><a href="index.php" alt="Home" style="align:center;color:azure;">
+&nbsp;&nbsp;&nbsp;&nbsp;<img src="style/citizen-schools-logo.gif" alt="Logo" style="vertical-align:middle" />
+</a></p></div>
+
+
+<div class="result warning">
+<h2 class="warning">Please enter your login<br/>
+
+(usually first name first letter of last)</h2>
+</div>
+
+
+<div class="help"><p>Enter your login and your email address to reset your password. Then click on the link in sent mail.</p></div>
+
+<form action="#" method="post">
+    <table>
+    <tr><th>Login</th>
+    <td><input type="text" name="login" value="" /></td></tr>
+    <tr><th>Mail</th>
+    <td><input type="text" name="mail" /></td></tr>
+    <tr><td colspan="2">
+    <input type="submit" value="Send" /></td></tr>
+    </table>
+</form>
+
+
+</div>
+
+</body>
+</html>
+
