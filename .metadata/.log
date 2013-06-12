@@ -30,3 +30,9 @@ Contains: The project description file (.project) for 'changepwd' is missing.  T
 !MESSAGE Save operation warnings.
 !SUBENTRY 1 org.eclipse.core.resources 2 234 2013-06-12 10:19:05.169
 !MESSAGE The project description file (.project) for 'changepwd' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-12 10:56:55.069
+!MESSAGE NLS missing message: HttpServerSettingsTab_Title in: com.aptana.js.debug.ui.internal.launchConfigurations.messages
+
+!ENTRY com.aptana.js.debug.core 1 0 2013-06-12 10:58:32.137
+!MESSAGE Firefox profile hasn't been found
