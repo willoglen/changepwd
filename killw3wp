@@ -1,0 +1,31 @@
+Function Mailer ($emailTo)
+
+{
+   
+	$message = "
+
+W3WP exceeded limits and was killed 
+
+Thank you,
+IT Department
+"
+	$emailFrom = "webmaster@citizenschools.org"
+
+	$subject="W3WP killed"
+
+	$smtpserver="aspmx.l.google.com"
+
+	$smtp=new-object Net.Mail.SmtpClient($smtpServer)
+
+	$smtp.Send($emailFrom, $emailTo, $subject, $message)
+
+
+}
+$p = get-process w3wp* | where-object {$_.cpu -gt 50000} 
+if($p){
+    stop-process -inputobject $p -Confirm:$true; 
+    
+    Mailer("glencunningham@citizenschools.org");
+    Mailer("davidkeith@citizenschools.org");
+    Mailer("michaelwooden@citizenschools.org");
+}
